@@ -31,6 +31,11 @@ if [[ -f bin/elasticsearch-users ]]; then
             echo "CA directory exists, removing..."
             rm -rf $configdir/certs/ssl/ca
         fi
+        echo "Install unzip if needed..."
+        if ! command -v unzip &>/dev/null; then
+            yum -qy install unzip
+        fi
+        
         echo "Unzip ca files..."
         unzip $configdir/certs/ssl/docker-cluster-ca.zip -d $configdir/certs/ssl
 
