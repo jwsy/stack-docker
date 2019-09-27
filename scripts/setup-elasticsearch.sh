@@ -33,7 +33,7 @@ if [[ -f bin/elasticsearch-users ]]; then
         fi
         echo "Install unzip if needed..."
         if ! command -v unzip &>/dev/null; then
-            yum -qy install unzip
+            yum -q -y install unzip
         fi
         
         echo "Unzip ca files..."
